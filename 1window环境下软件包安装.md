@@ -8,3 +8,8 @@
 	1. cnpm install --global vue-cli（安装后需要重启cmd或PowerShell）
 	2. vue --version
 5. 在 cmd 下执行 vue --version 正常(2.9.6)，但在 PowerShell 下执行出现报错：……vue.ps1，因为在此系统上禁止运行脚本
+6. 对于5的解决方案
+	1. 以管理员!身份运行PowerShell!
+	2. 执行：get-ExecutionPolicy，回复Restricted，表示状态是禁止的
+	3. 执行：set-ExecutionPolicy RemoteSigned
+	4. 选择Y
