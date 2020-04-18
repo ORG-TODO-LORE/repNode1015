@@ -4,3 +4,6 @@
 	1. npm install -g cnpm --registry=https://registry.npm.taobao.org
 3. 如果已经安装，可以查看cli版本号
 	1. vue --version
+4. 全局安装 vue-cli，并查看版本号
+	1. cnpm install --global vue-cli
+	2. vue --version
