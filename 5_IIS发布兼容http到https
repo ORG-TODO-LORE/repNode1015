@@ -1,0 +1,23 @@
+1. 安装iis的重写模块
+2. 网站绑定主机头，和80及443端口
+3. web.config添加如下代码：
+```
+<rewrite>
+  <rules>
+    <rule name="test" patternSyntax="Wildcard">
+        <match url="*" />
+        <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+        </conditions>
+        <action type="Rewrite" url="/index.html" />
+    </rule>
+    <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+      <match url="(.*)" />
+      <conditions>
+    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+      </conditions>
+      <action type="Redirect" redirectType="Found" url="https://{HTTP_HOST}" />
+    </rule>
+  </rules>
+</rewrite>
+```
